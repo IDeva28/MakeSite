@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Academy - Education Course Template</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="../Javascript/ComponentForm.js"></script>
+    <link rel="stylesheet" href="../css/ComponentForm.css">
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- ##### Preloader ##### -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+    </div>
+
+    <div ng-app="Education" ng-controller="EducationCtrl">
+        <!-- ##### Header Area Start ##### -->
+        <header class="header-area" id="NavBar">
+            <!-- Top Header Area -->
+            <div class="top-header">
+                <div class="container h-100">
+                    <div class="row h-100">
+                        <div class="col-12 h-100">
+                            <div class="header-content h-100 d-flex align-items-center justify-content-between">
+                                <div class="academy-logo">
+                                    <a href="index.html"><img src="img/core-img/logo.png" id="Logo" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Navbar Area -->
+            <div class="academy-main-menu">
+                <div class="classy-nav-container breakpoint-off">
+                    <div class="container">
+                        <!-- Menu -->
+                        <nav class="classy-navbar justify-content-between" id="academyNav">
+    
+                            <!-- Navbar Toggler -->
+                            <div class="classy-navbar-toggler">
+                                <span class="navbarToggler"><span></span><span></span><span></span></span>
+                            </div>
+    
+                            <!-- Menu -->
+                            <div class="classy-menu">
+    
+                                <!-- close btn -->
+                                <div class="classycloseIcon">
+                                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                                </div>
+    
+                                <!-- Nav Start -->
+                                <div class="classynav">
+                                    <ul>
+                                        <li><a href="index.html">{{Menu1}}</a></li>
+                                        <li><a href="#">{{Menu2}}</a>
+                                            <ul class="dropdown">
+                                                <li><a href="index.html">{{SubMenu1}}</a></li>
+                                                <li><a href="about-us.html">{{SubMenu2}}</a></li>
+                                                <li><a href="course.html">{{SubMenu3}}</a></li>
+                                                <li><a href="blog.html">{{SubMenu4}}</a></li>
+                                                <li><a href="contact.html">{{SubMenu5}}</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="about-us.html">{{Menu3}}</a></li>
+                                        <li><a href="course.html">{{Menu4}}</a></li>
+                                        <li><a href="contact.html">{{Menu5}}</a></li>
+                                    </ul>
+                                </div>
+                                <!-- Nav End -->
+                            </div>
+    
+                            <!-- Calling Info -->
+                            <div class="calling-info">
+                                <div class="call-center">
+                                    <a href="tel:+{{telephone}}"><i class="icon-telephone-2"></i> <span>{{telephone}}</span></a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+     <!-- ##### Header Area End ##### -->
+
+<!-- ##### Breadcumb Area Start ##### -->
+<div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
+    <div class="bradcumbContent">
+        <h2>{{Section1Title}}</h2>
+    </div>
+</div>
+<!-- ##### Breadcumb Area End ##### -->
+    <!-- ##### Contact Area Start ##### -->
+    <section class="contact-area" id="EducationSection1">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="contact-content">
+                        <div class="row">
+                            <!-- Contact Information -->
+                            <div class="col-12 col-lg-5">
+                                <div class="contact-information wow fadeInUp" data-wow-delay="400ms">
+                                    <div class="section-heading text-left">
+                                        <span>{{Section1Text1}}</span>
+                                        <h3>{{Section1Text2}}</h3>
+                                        <p class="mt-30">{{Section1Description}}</p>
+                                    </div>
+
+                                    <!-- Contact Social Info -->
+                                    <div class="contact-social-info d-flex mb-30">
+                                        <a href="{{FacebookLink1}}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="{{TwitterLink1}}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        <a href="{{InstagramLink1}}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    </div>
+
+                                    <!-- Single Contact Info -->
+                                    <div class="single-contact-info d-flex">
+                                        <div class="contact-icon mr-15">
+                                            <i class="icon-placeholder"></i>
+                                        </div>
+                                        <p>{{AddressLine1}}<br> {{AddressLine2}}</p>
+                                    </div>
+
+                                    <!-- Single Contact Info -->
+                                    <div class="single-contact-info d-flex">
+                                        <div class="contact-icon mr-15">
+                                            <i class="icon-telephone-1"></i>
+                                        </div>
+                                        <p>{{PhoneNo1}} <br> Office: {{PhoneNo2}}</p>
+                                    </div>
+
+                                    <!-- Single Contact Info -->
+                                    <div class="single-contact-info d-flex">
+                                        <div class="contact-icon mr-15">
+                                            <i class="icon-contract"></i>
+                                        </div>
+                                        <p>{{Email}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Contact Area End ##### -->
+<!-- ##### Footer Area Start ##### -->
+<footer class="footer-area" id="EducationFooter">
+    <div class="main-footer-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="footer-widget mb-100">
+                        <div class="widget-title">
+                            <a href="#"><img src="img/core-img/logo2.png" id="Logo" alt=""></a>
+                        </div>
+                        <p>{{FooterDescription}}</p>
+                        <div class="footer-social-info">
+                            <a href="{{FacebookLink}}"><i class="fa fa-facebook"></i></a>
+                            <a href="{{TwitterLink}}"><i class="fa fa-twitter"></i></a>
+                            <a href="{{InstagramLink}}"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="footer-widget mb-100">
+                        <div class="widget-title">
+                            <h6>{{FooterTitle1}}</h6>
+                        </div>
+                        <nav>
+                            <ul class="useful-links">
+                                <li><a href="{{FooterLink1}}">{{FooterLink1Text}}</a></li>
+                                <li><a href="{{FooterLink2}}">{{FooterLink2Text}}</a></li>
+                                <li><a href="{{FooterLink3}}">{{FooterLink3Text}}</a></li>
+                                <li><a href="{{FooterLink4}}">{{FooterLink4Text}}</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="footer-widget mb-100">
+                        <div class="widget-title">
+                            <h6>{{FooterTitle2}}</h6>
+                        </div>
+                        <div class="single-contact d-flex mb-30">
+                            <i class="icon-placeholder"></i>
+                            <p>{{Location}}</p>
+                        </div>
+                        <div class="single-contact d-flex mb-30">
+                            <i class="icon-telephone-1"></i>
+                            <p>Main: {{Phone1}} <br>Office: {{Phone2}}</p>
+                        </div>
+                        <div class="single-contact d-flex">
+                            <i class="icon-contract"></i>
+                            <p>{{EmailAddress}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ##### Footer Area Start ##### -->
+<div>
+    <div id="Panel">
+        <button type="button" onclick="on()" class="bottomleft">Show</button><button type="button" onclick="off()" class="bottomright">Hide</button>
+        <div id="overlay">
+            <div class="tab">
+              <a href="#NavBar" style="text-decoration:none"><button class="tablinks"  onmouseover="" onclick="openSection(event, 'NavigationBar')" style="background-color:#4b0082;color: #ffffff; " id="defaultOpen" >Navigation Bar</button></a>
+              <a href="#EducationSection1" style="text-decoration:none" ><button class="tablinks" id ="button1" onclick="openSection(event, 'Section1')">Section1</button></a>
+              <a href="#EducationFooter" style="text-decoration:none" ><button class="tablinks" id ="button6" onclick="openSection(event, 'Footer')">Footer</button></a>
+            </div>
+            <div id="NavigationBar" class="tabcontent" style="background-color:#4b0082" >
+                <br/><br/>
+                <table>
+                    <tr>
+                        <td>
+                            <label for="">Logo</label>
+                        </td>
+                        <td>
+                            <input type='file' id='getval' name="background-image" onchange="readSrc(event,'#Logo')" accept="image/*" /><br/><br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Menu 1</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Menu1" placeholder="First Menu">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Menu 2</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Menu2" placeholder="Second Menu">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Sub Menu 1</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubMenu1" placeholder="First Sub Menu">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Sub Menu 2</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubMenu2" placeholder="Second Sub Menu">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Sub Menu 3</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubMenu3" placeholder="Third Sub Menu">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Sub Menu 4</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubMenu4" placeholder="Fourth Sub Menu">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Sub Menu 5</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubMenu5" placeholder="Fifth Sub Menu">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Menu 3</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Menu3" placeholder="Third Menu">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Menu 4</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Menu4" placeholder="Fourth Menu">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Menu 5</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Menu5" placeholder="Fifth Menu">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">telephone</label>
+                        </td>
+                        <td>
+                            <input type="number" ng-model="telephone" placeholder="telephone">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="Section1" class="tabcontent" style="background-color:#d23be7">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="">Text 1</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Section1Text1" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Text 2</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Section1Text2" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Description</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Section1Description" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Facebook</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FacebookLink1" placeholder="Link Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Twitter</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="TwitterLink1" placeholder="Link Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Instagram</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="InstagramLink1" placeholder="Link Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Phone No 1</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="PhoneNo1" placeholder="Phone Number Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Phone No 2</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="PhoneNo2" placeholder="Phone Number Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Address Line 1</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="AddressLine1" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Address Line 2</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="AddressLine2" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Email Address</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Email" placeholder="Email Address Here">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="Footer" class="tabcontent" style="background-color: #99004c;">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="">Footer Description </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterDescription" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for=""><i class="fa fa-facebook"></i>Facebook </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FacebookLink" placeholder="Facebook Link Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for=""><i class="fa fa-twitter"></i>Twitter </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="TwitterLink" placeholder="Twitter Link Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for=""><i class="fa fa-instagram"></i>Instagram </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="InstagramLink" placeholder="Instagram Link Here">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Title 1</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterTitle1" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Link 1</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterLink1" placeholder="Some Text Here">
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterLink1Text" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Link 2</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterLink2" placeholder="Some Text Here">
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterLink2Text" placeholder="Some Text Here">
+                        </td>            
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Link 3</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterLink3" placeholder="Some Text Here">
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterLink3Text" placeholder="Some Text Here"> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Link 4</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterLink4" placeholder="Some Text Here">
+                        </td> 
+                        <td>
+                            <input type="text" ng-model="FooterLink4Text" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Title 2</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterTitle2" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Location</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Location" id="Location" placeholder="Some Text Here">
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <label for="">Phone (1)</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Phone1" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Phone (2)</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Phone2" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Email Address</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="EmailAddress" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+    <!-- Google Maps -->
+    
+    
+    <script>
+        var app = angular.module('Education',[]);
+
+app.controller('EducationCtrl',function($scope) 
+{
+    $scope.Menu1="First Menu";
+    $scope.Menu2="Second Menu";
+    $scope.SubMenu1="First Sub Menu";
+    $scope.SubMenu2="Second Sub Menu";
+    $scope.SubMenu3="Third Sub Menu";
+    $scope.SubMenu4="Fourth Sub Menu";
+    $scope.SubMenu5="Fifth Sub Menu";
+    $scope.Menu3="Third Menu";
+    $scope.Menu4="Fourth Menu";
+    $scope.Menu5="Fifth Menu";
+    $scope.telephone="telephone";
+
+    $scope.Section1Title="Title Here";
+    
+    $scope.FooterTitle1="Title 1";
+    $scope.FooterDescription="Description";
+    $scope.FooterLink1="#";
+    $scope.FooterLink1Text="Link 1";
+    $scope.FooterLink2="#";
+    $scope.FooterLink2Text="Link 2";
+    $scope.FooterLink3="#";
+    $scope.FooterLink3Text="Link 3";
+    $scope.FooterLink4="#";
+    $scope.FooterLink4Text="Link 4";
+
+    $scope.FooterTitle2="Title 2";
+    $scope.FooterTitle2="Title 3";
+    $scope.Location="Location";
+    $scope.Phone1="Phone1";
+    $scope.Phone2="Phone2";
+    $scope.EmailAddress="Address";
+
+    $scope.FacebookLink="#";
+    $scope.TwitterLink="#";
+    $scope.InstagramLink="#";
+});
+
+function readSrc(event,value)
+{		 
+    var getImagePath = URL.createObjectURL(event.target.files[0]);
+    $(value).attr("src", getImagePath );
+}
+window.onload(on());
+    </script>
+
+</body>
+
+</html>

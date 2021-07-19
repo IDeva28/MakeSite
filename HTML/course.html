@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Academy - Education Course Template</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="../Javascript/ComponentForm.js"></script>
+    <link rel="stylesheet" href="../css/ComponentForm.css">
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- ##### Preloader ##### -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+    </div>
+
+    <div ng-app="Education" ng-controller="EducationCtrl">
+        <!-- ##### Header Area Start ##### -->
+        <header class="header-area" id="NavBar">
+            <!-- Top Header Area -->
+            <div class="top-header">
+                <div class="container h-100">
+                    <div class="row h-100">
+                        <div class="col-12 h-100">
+                            <div class="header-content h-100 d-flex align-items-center justify-content-between">
+                                <div class="academy-logo">
+                                    <a href="index.html"><img src="img/core-img/logo.png" id="Logo" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Navbar Area -->
+            <div class="academy-main-menu">
+                <div class="classy-nav-container breakpoint-off">
+                    <div class="container">
+                        <!-- Menu -->
+                        <nav class="classy-navbar justify-content-between" id="academyNav">
+    
+                            <!-- Navbar Toggler -->
+                            <div class="classy-navbar-toggler">
+                                <span class="navbarToggler"><span></span><span></span><span></span></span>
+                            </div>
+    
+                            <!-- Menu -->
+                            <div class="classy-menu">
+    
+                                <!-- close btn -->
+                                <div class="classycloseIcon">
+                                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                                </div>
+    
+                                <!-- Nav Start -->
+                                <div class="classynav">
+                                    <ul>
+                                        <li><a href="index.html">{{Menu1}}</a></li>
+                                        <li><a href="#">{{Menu2}}</a>
+                                            <ul class="dropdown">
+                                                <li><a href="index.html">{{SubMenu1}}</a></li>
+                                                <li><a href="about-us.html">{{SubMenu2}}</a></li>
+                                                <li><a href="course.html">{{SubMenu3}}</a></li>
+                                                <li><a href="blog.html">{{SubMenu4}}</a></li>
+                                                <li><a href="contact.html">{{SubMenu5}}</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="about-us.html">{{Menu3}}</a></li>
+                                        <li><a href="course.html">{{Menu4}}</a></li>
+                                        <li><a href="contact.html">{{Menu5}}</a></li>
+                                    </ul>
+                                </div>
+                                <!-- Nav End -->
+                            </div>
+    
+                            <!-- Calling Info -->
+                            <div class="calling-info">
+                                <div class="call-center">
+                                    <a href="tel:+{{telephone}}"><i class="icon-telephone-2"></i> <span>{{telephone}}</span></a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+     <!-- ##### Header Area End ##### -->
+
+<!-- ##### Breadcumb Area Start ##### -->
+<div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
+    <div class="bradcumbContent">
+        <h2>{{Section1Title}}</h2>
+    </div>
+</div>
+<!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Top Popular Courses Area Start ##### -->
+    <div class="top-popular-courses-area mt-50 section-padding-100-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
+                        <span>{{Section1Text1}}</span>
+                        <h3>{{Section1Text2}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <!-- Single Top Popular Course -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="popular-course-content">
+                            <h5>{{SubSection1Heading}}</h5>
+                            <span>{{SubSection1Author}}   |  {{SubSection1Date}}</span>
+                            <p>{{SubSection1Content}}
+                            </p>
+                            <a href="{{SubSection1Link}}" class="btn academy-btn btn-sm">{{SubSection1LinkText}}</a>
+                        </div>
+                        <div class="popular-course-thumb bg-img" style="background-image: url(img/bg-img/pc-1.jpg);"></div>
+                    </div>
+                </div>
+
+                <!-- Single Top Popular Course -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="500ms">
+                        <div class="popular-course-content">
+                            <h5>{{SubSection2Heading}}</h5>
+                            <span>{{SubSection2Author}}   |  {{SubSection2Date}}</span>
+                            <p>{{SubSection2Content}}
+                            </p>
+                            <a href="{{SubSection2Link}}" class="btn academy-btn btn-sm">{{SubSection2LinkText}}</a>
+                        </div>
+                        <div class="popular-course-thumb bg-img" style="background-image: url(img/bg-img/pc-2.jpg);"></div>
+                    </div>
+                </div>
+
+                <!-- Single Top Popular Course -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="600ms">
+                        <div class="popular-course-content">
+                            <h5>{{SubSection3Heading}}</h5>
+                            <span>{{SubSection3Author}}   |  {{SubSection3Date}}</span>
+                            <p>{{SubSection3Content}}
+                            </p>
+                            <a href="{{SubSection3Link}}" class="btn academy-btn btn-sm">{{SubSection3LinkText}}</a>
+                        </div>
+                        <div class="popular-course-thumb bg-img" style="background-image: url(img/bg-img/pc-3.jpg);"></div>
+                    </div>
+                </div>
+
+                <!-- Single Top Popular Course -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="700ms">
+                        <div class="popular-course-content">
+                            <h5>{{SubSection4Heading}}</h5>
+                            <span>{{SubSection4Author}}   |  {{SubSection4Date}}</span>
+                            <p>{{SubSection4Content}}
+                            </p>
+                            <a href="{{SubSection4Link}}" class="btn academy-btn btn-sm">{{SubSection4LinkText}}</a>
+                        </div>
+                        <div class="popular-course-thumb bg-img" style="background-image: url(img/bg-img/pc-4.jpg);"></div>
+                    </div>
+                </div>
+
+                <!-- Single Top Popular Course -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="800ms">
+                        <div class="popular-course-content">
+                            <h5>{{SubSection5Heading}}</h5>
+                            <span>{{SubSection5Author}}   |  {{SubSection5Date}}</span>
+                            <p>{{SubSection5Content}}</p>
+                            <a href="{{SubSection5Link}}" class="btn academy-btn btn-sm">{{SubSection5LinkText}}</a>
+                        </div>
+                        <div class="popular-course-thumb bg-img" style="background-image: url(img/bg-img/pc-5.jpg);"></div>
+                    </div>
+                </div>
+
+                <!-- Single Top Popular Course -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="900ms">
+                        <div class="popular-course-content">
+                            <h5>{{SubSection6Heading}}</h5>
+                            <span>{{SubSection6Author}}   |  {{SubSection6Date}}</span>
+                            <p>{{SubSection6Content}}</p>
+                            <a href="{{SubSection6Link}}" class="btn academy-btn btn-sm">{{SubSection6LinkText}}</a>
+                        </div>
+                        <div class="popular-course-thumb bg-img" style="background-image: url(img/bg-img/pc-6.jpg);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Top Popular Courses Area End ##### -->
+
+    <!-- ##### Top Popular Courses Details Area Start ##### -->
+    <div class="popular-course-details-area wow fadeInUp" data-wow-delay="300ms">
+        <div class="single-top-popular-course d-flex align-items-center flex-wrap">
+            <div class="popular-course-content">
+                <h5>{{SubSection7Heading}}</h5>
+                <span>{{SubSection7Author}}   |  {{SubSection7Date}}</span>
+                <p>{{SubSection7Content}}</p>
+                <a href="{{SubSection7Link}}" class="btn academy-btn btn-sm mt-15">{{SubSection7LinkText}}</a>
+            </div>
+            <div class="popular-course-thumb bg-img" style="background-image: url(img/bg-img/bg-4.jpg);"></div>
+        </div>
+    </div>
+    <!-- ##### Top Popular Courses Details Area End ##### -->
+
+<!-- ##### Footer Area Start ##### -->
+<footer class="footer-area" id="EducationFooter">
+    <div class="main-footer-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="footer-widget mb-100">
+                        <div class="widget-title">
+                            <a href="#"><img src="img/core-img/logo2.png" id="Logo" alt=""></a>
+                        </div>
+                        <p>{{FooterDescription}}</p>
+                        <div class="footer-social-info">
+                            <a href="{{FacebookLink}}"><i class="fa fa-facebook"></i></a>
+                            <a href="{{TwitterLink}}"><i class="fa fa-twitter"></i></a>
+                            <a href="{{InstagramLink}}"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="footer-widget mb-100">
+                        <div class="widget-title">
+                            <h6>{{FooterTitle1}}</h6>
+                        </div>
+                        <nav>
+                            <ul class="useful-links">
+                                <li><a href="{{FooterLink1}}">{{FooterLink1Text}}</a></li>
+                                <li><a href="{{FooterLink2}}">{{FooterLink2Text}}</a></li>
+                                <li><a href="{{FooterLink3}}">{{FooterLink3Text}}</a></li>
+                                <li><a href="{{FooterLink4}}">{{FooterLink4Text}}</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="footer-widget mb-100">
+                        <div class="widget-title">
+                            <h6>{{FooterTitle2}}</h6>
+                        </div>
+                        <div class="single-contact d-flex mb-30">
+                            <i class="icon-placeholder"></i>
+                            <p>{{Location}}</p>
+                        </div>
+                        <div class="single-contact d-flex mb-30">
+                            <i class="icon-telephone-1"></i>
+                            <p>Main: {{Phone1}} <br>Office: {{Phone2}}</p>
+                        </div>
+                        <div class="single-contact d-flex">
+                            <i class="icon-contract"></i>
+                            <p>{{EmailAddress}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ##### Footer Area Start ##### -->
+
+<div>
+    <div id="Panel">
+        <button type="button" onclick="on()" class="bottomleft">Show</button><button type="button" onclick="off()" class="bottomright">Hide</button>
+        <div id="overlay">
+            <div class="tab">
+              <a href="#NavBar" style="text-decoration:none"><button class="tablinks"  onmouseover="" onclick="openSection(event, 'NavigationBar')" style="background-color:#4b0082;color: #ffffff; " id="defaultOpen" >Navigation Bar</button></a>
+              <a href="#EducationSection1" style="text-decoration:none" ><button class="tablinks" id ="button1" onclick="openSection(event, 'Section1')">Section1</button></a>
+              <a href="#EducationSection2" style="text-decoration:none" ><button class="tablinks" id ="button2" onclick="openSection(event, 'Section2')">Section2</button></a>
+              <a href="#EducationFooter" style="text-decoration:none" ><button class="tablinks" id ="button6" onclick="openSection(event, 'Footer')">Footer</button></a>
+            </div>
+            
+            <div id="NavigationBar" class="tabcontent" style="background-color:#4b0082" >
+                <br/><br/>
+                <table>
+                    <tr>
+                        <td>
+                            <label for="">Logo</label>
+                        </td>
+                        <td>
+                            <input type='file' id='getval' name="background-image" onchange="readSrc(event,'#Logo')" accept="image/*" /><br/><br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Menu 1</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Menu1" placeholder="First Menu">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Menu 2</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Menu2" placeholder="Second Menu">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Sub Menu 1</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubMenu1" placeholder="First Sub Menu">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Sub Menu 2</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubMenu2" placeholder="Second Sub Menu">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Sub Menu 3</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubMenu3" placeholder="Third Sub Menu">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Sub Menu 4</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubMenu4" placeholder="Fourth Sub Menu">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Sub Menu 5</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubMenu5" placeholder="Fifth Sub Menu">
+                        </td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td>
+                            <label for="">Menu 3</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Menu3" placeholder="Third Menu">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Menu 4</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Menu4" placeholder="Fourth Menu">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Menu 5</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Menu5" placeholder="Fifth Menu">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">telephone</label>
+                        </td>
+                        <td>
+                            <input type="number" ng-model="telephone" placeholder="telephone">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div id="Section1" class="tabcontent" style="background-color: #d23be7;"  >
+                <table>
+                    <tr>
+                        <td>
+                            <label for="">Text 1</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Section1Text1" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Text 2</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Section1Text2" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr><td colspan="2"><h2><label for="">Post 1</label></h2></td></tr>
+                    <tr>
+                        <td>
+                            <label for="">Post Image</label>
+                        </td>
+                        <td>
+                            <input type='file' id='getval' name="background-image" onchange="readSrc(event,'#Image4')" accept="image/*" /><br/><br/>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Heading </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection1Heading" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Author</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection1Author" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Date</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection1Date" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Content</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection1Content" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Link </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection1LinkText" placeholder="Some Text Here">
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection1Link" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                </table>
+                <hr>
+                <table>
+                    <tr><td colspan="2"><h2><label for="">Post 2</label></h2></td></tr>
+                    <tr>
+                        <td>
+                            <label for="">Post Image</label>
+                        </td>
+                        <td>
+                            <input type='file' id='getval' name="background-image" onchange="readSrc(event,'#Image4')" accept="image/*" /><br/><br/>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Heading </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection2Heading" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Author</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection2Author" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Date</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection2Date" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Content</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection2Content" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Link </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection2LinkText" placeholder="Some Text Here">
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection2Link" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                </table>
+                <hr>
+                <table>
+                    <tr><td colspan="2"><h2><label for="">Post 3</label></h2></td></tr>
+                    <tr>
+                        <td>
+                            <label for="">Post Image</label>
+                        </td>
+                        <td>
+                            <input type='file' id='getval' name="background-image" onchange="readSrc(event,'#Image4')" accept="image/*" /><br/><br/>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Heading </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection3Heading" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Author</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection3Author" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Date</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection3Date" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Content</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection3Content" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Link </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection3LinkText" placeholder="Some Text Here">
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection3Link" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                </table>
+                <hr>
+                <table>
+                    <tr><td colspan="2"><h2><label for="">Post 4</label></h2></td></tr>
+                    <tr>
+                        <td>
+                            <label for="">Post Image</label>
+                        </td>
+                        <td>
+                            <input type='file' id='getval' name="background-image" onchange="readSrc(event,'#Image4')" accept="image/*" /><br/><br/>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Heading </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection4Heading" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Author</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection4Author" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Date</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection4Date" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Content</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection4Content" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Link </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection4LinkText" placeholder="Some Text Here">
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection4Link" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                </table>
+                <hr>
+                <table>
+                    <tr><td colspan="2"><h2><label for="">Post 5</label></h2></td></tr>
+                    <tr>
+                        <td>
+                            <label for="">Post Image</label>
+                        </td>
+                        <td>
+                            <input type='file' id='getval' name="background-image" onchange="readSrc(event,'#Image4')" accept="image/*" /><br/><br/>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Heading </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection5Heading" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Author</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection5Author" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Date</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection5Date" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Content</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection5Content" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Link </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection5LinkText" placeholder="Some Text Here">
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection5Link" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                </table>
+                <hr>
+                
+                <table>
+                    <tr><td colspan="2"><h2><label for="">Post 6</label></h2></td></tr>
+                    <tr>
+                        <td>
+                            <label for="">Post Image</label>
+                        </td>
+                        <td>
+                            <input type='file' id='getval' name="background-image" onchange="readSrc(event,'#Image4')" accept="image/*" /><br/><br/>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Heading </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection6Heading" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Author</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection6Author" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Date</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection6Date" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Content</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection6Content" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Link </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection6LinkText" placeholder="Some Text Here">
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection6Link" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="Section2" class="tabcontent"style="background-color: #0000ff" >
+                <table>
+                    <tr><td colspan="2"><h2><label for="">Post 7</label></h2></td></tr>
+                    <tr>
+                        <td>
+                            <label for="">Post Image</label>
+                        </td>
+                        <td>
+                            <input type='file' id='getval' name="background-image" onchange="readSrc(event,'#Image4')" accept="image/*" /><br/><br/>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Heading </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection7Heading" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Author</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection7Author" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Date</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection7Date" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Content</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection7Content" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Link </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection7LinkText" placeholder="Some Text Here">
+                        </td>
+                        <td>
+                            <input type="text" ng-model="SubSection7Link" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div id="Footer" class="tabcontent" style="background-color: #99004c;">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="">Footer Description </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterDescription" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for=""><i class="fa fa-facebook"></i>Facebook </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FacebookLink" placeholder="Facebook Link Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for=""><i class="fa fa-twitter"></i>Twitter </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="TwitterLink" placeholder="Twitter Link Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for=""><i class="fa fa-instagram"></i>Instagram </label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="InstagramLink" placeholder="Instagram Link Here">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="">Title 1</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterTitle1" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Link 1</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterLink1" placeholder="Some Text Here">
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterLink1Text" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Link 2</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterLink2" placeholder="Some Text Here">
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterLink2Text" placeholder="Some Text Here">
+                        </td>            
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Link 3</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterLink3" placeholder="Some Text Here">
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterLink3Text" placeholder="Some Text Here"> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Link 4</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterLink4" placeholder="Some Text Here">
+                        </td> 
+                        <td>
+                            <input type="text" ng-model="FooterLink4Text" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Title 2</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="FooterTitle2" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Location</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Location" placeholder="Some Text Here">
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <label for="">Phone (1)</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Phone1" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Phone (2)</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Phone2" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Email Address</label>
+                        </td>
+                        <td>
+                            <input type="text" ng-model="EmailAddress" placeholder="Some Text Here">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+    <script>
+        var app = angular.module('Education',[]);
+
+app.controller('EducationCtrl',function($scope) 
+{
+    $scope.Menu1="First Menu";
+    $scope.Menu2="Second Menu";
+    $scope.SubMenu1="First Sub Menu";
+    $scope.SubMenu2="Second Sub Menu";
+    $scope.SubMenu3="Third Sub Menu";
+    $scope.SubMenu4="Fourth Sub Menu";
+    $scope.SubMenu5="Fifth Sub Menu";
+    $scope.Menu3="Third Menu";
+    $scope.Menu4="Fourth Menu";
+    $scope.Menu5="Fifth Menu";
+    $scope.telephone="telephone";
+
+    $scope.Section1Title="Title Here";
+    $scope.Section1Text1="Some Text Here";
+    $scope.Section1Text2="Some Text Here";
+    
+    
+$scope.SubSection1Heading="Post Heading";
+$scope.SubSection1Author="Post Author";
+$scope.SubSection1Date="Posted on ";
+$scope.SubSection1Content="Post Content Goes Here";
+$scope.SubSection1LinkText="See More";
+$scope.SubSection1Link="#";
+
+$scope.SubSection2Heading="Post Heading";
+$scope.SubSection2Author="Post Author";
+$scope.SubSection2Date="Posted on ";
+$scope.SubSection2Content="Post Content Goes Here";
+$scope.SubSection2LinkText="See More";
+$scope.SubSection2Link="#";
+
+$scope.SubSection3Heading="Post Heading";
+$scope.SubSection3Author="Post Author";
+$scope.SubSection3Date="Posted on ";
+$scope.SubSection3Content="Post Content Goes Here";
+$scope.SubSection3LinkText="See More";
+$scope.SubSection3Link="#";
+
+$scope.SubSection4Heading="Post Heading";
+$scope.SubSection4Author="Post Author";
+$scope.SubSEction4Date="Posted on ";
+$scope.SubSection4Content="Post Content Goes Here";
+$scope.SubSection4LinkText="See More";
+$scope.SubSection4Link="#";
+
+$scope.SubSection5Heading="Post Heading";
+$scope.SubSection5Author="Post Author";
+$scope.SubSEction5Date="Posted on ";
+$scope.SubSection5Content="Post Content Goes Here";
+$scope.SubSection5LinkText="See More";
+$scope.SubSection5Link="#";
+
+
+$scope.SubSection6Heading="Post Heading";
+$scope.SubSection6Author="Post Author";
+$scope.SubSEction6Date="Posted on ";
+$scope.SubSection6Content="Post Content Goes Here";
+$scope.SubSection6LinkText="See More";
+$scope.SubSection6Link="#";
+
+
+$scope.SubSection7Heading="Post Heading";
+$scope.SubSection7Author="Post Author";
+$scope.SubSEction7Date="Posted on ";
+$scope.SubSection7Content="Post Content Goes Here";
+$scope.SubSection7LinkText="See More";
+$scope.SubSection7Link="#";
+    
+    $scope.FooterTitle1="Title 1";
+    $scope.FooterDescription="Description";
+    $scope.FooterLink1="#";
+    $scope.FooterLink1Text="Link 1";
+    $scope.FooterLink2="#";
+    $scope.FooterLink2Text="Link 2";
+    $scope.FooterLink3="#";
+    $scope.FooterLink3Text="Link 3";
+    $scope.FooterLink4="#";
+    $scope.FooterLink4Text="Link 4";
+
+    $scope.FooterTitle2="Title 2";
+    $scope.FooterTitle2="Title 3";
+    $scope.Location="Location";
+    $scope.Phone1="Phone1";
+    $scope.Phone2="Phone2";
+    $scope.EmailAddress="Address";
+
+    $scope.FacebookLink="#";
+    $scope.TwitterLink="#";
+    $scope.InstagramLink="#";
+});
+
+function readSrc(event,value)
+{		 
+    var getImagePath = URL.createObjectURL(event.target.files[0]);
+    $(value).attr("src", getImagePath );
+}
+window.onload(on());
+    </script>
+
+</body>
+
+</html>
