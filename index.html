@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      /* Style the tab */
+      .bottomleft {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-size: 18px;
+  background-color: rebeccapurple;
+  border-radius: 5%;
+  color:white;
+  padding: 1%;
+  border: 0.5px solid rebeccapurple;
+}
+
+      .bottomright {
+  position: absolute;
+  bottom: 8px;
+  right: 10%;
+  font-size: 18px;
+  background-color: yellowgreen;
+  color:white;
+  border: 0.5px solid yellowgreen;
+  padding: 1%;
+  border-radius: 5%;
+}
+
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 20%;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.7s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+  opacity: inherit;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 80%;
+  height: 540px;
+  background-color: white;
+  border-left: none;
+  overflow:auto;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 40%;
+  height:fit-content;
+  margin-top: 10%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  /* background-color: #ffffff; */
+  z-index: 2;
+  cursor: pointer;
+}
+
+.tabcontent input{
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #111111;
+  border-radius: 5px;
+  outline-style: none;
+}
+
+#button1{
+  background-color: #d23be7;
+  font-weight: bold;
+  color: #ffffff;
+}
+#button2{
+  background-color: #0000ff;
+  color: #ffffff;
+   font-weight: bold;
+}
+#button3{
+  background-color: #359435;
+  color: #ffffff;
+   font-weight: bold;
+}
+#button4{
+  background-color: #e6e63e;
+  color: #ffffff;
+   font-weight: bold;
+}
+#button5{
+  background-color: #ff7f00;
+  color: #ffffff;
+   font-weight: bold;
+}
+#button6{
+  background-color: #99004c;
+  color: #ffffff;
+   font-weight: bold;
+}
+
+label{
+  margin-right: 40px;
+  color: #ffffff;
+}
+
+#Panel {
+  position: fixed;
+  display: block;
+  width: 40%;
+  height:fit-content;
+  margin-top: 10%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  /* background-color: #ffffff; */
+  z-index: 2;
+  cursor: pointer;
+  }
+
+  #PanelHeader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
+    margin-bottom: -4%;
+  }
+
+    </style>
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+      <div ng-app="Business" ng-controller="BusinessCtrl">
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div class="site-wrap" id="home-section">
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner" id="nav"><!--Navigation Bar is nav-->
+
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <div class="col-6 col-md-3 col-xl-4  d-block">
+            <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">{{Name}}</a></h1>
+          </div>
+
+          <div class="col-12 col-md-9 col-xl-8 main-menu">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
+                <li><a href="#Section1" class="nav-link">{{Menu1}}</a></li>
+                <li><a href="#Section2" class="nav-link">{{Menu2}}</a></li>
+                <li class="has-children">
+                  <a href="#Section3" class="nav-link">{{Menu3}}</a>
+                  <ul class="dropdown arrow-top">
+                    <li><a href="#Section3" target="_blank" class="nav-link"><span class="text-primary">{{SubMenu1}}</span></a></li>
+                    <li><a href="#Section3" class="nav-link">{{SubMenu2}}</a></li>
+                   </ul>
+                </li>
+                <li><a href="#Section4" class="nav-link">{{Menu4}}</a></li>
+                <li><a href="#Section5" class="nav-link">{{Menu5}}</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="col-6 col-md-9 d-inline-block d-lg-none ml-md-0" ><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
+
+        </div>
+      </div>
+    </header>
+    
+    <div class="site-blocks-cover" id="first-section" style="overflow: hidden;"><!--Section 1 is first-section -->
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+
+          <div class="col-md-12" style="position: relative;" data-aos="fade-up" data-aos-delay="200">
+            
+            <img src="images/undraw_investing_7u74.svg" alt="Image" class="img-fluid img-absolute">
+
+            <div class="row mb-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-6 mr-auto">
+                <h1>{{Section1Text1}}</h1>
+                <p class="mb-5">{{Section1Text2}}</p>
+                <div>
+                  <a href="#" class="btn btn-primary mr-2 mb-2">{{Section1Button1Text}}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+    <div class="site-section" id="features-section"><!--section2 is features-section-->
+      <div class="container">
+        <div class="row mb-5 justify-content-center text-center"  data-aos="fade-up">
+          <div class="col-7 text-center  mb-5">
+            <h2 class="section-title">{{Section2Text1}}</h2>
+            <p class="lead">{{Section2Text2}}</p>
+          </div>
+        </div>
+        <div class="row align-items-stretch">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
+            
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-autorenew"></span></span>
+              </div>
+              <div>
+                <h3>{{Section2SubText1}}</h3>
+                <p>{{Section2SubText1Description}}</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-store_mall_directory"></span></span>
+              </div>
+              <div>
+                <h3>{{Section2SubText2}}</h3>
+                <p>{{Section2SubText2Description}}</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up"  data-aos-delay="200">
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-shopping_basket"></span></span>
+              </div>
+              <div>
+                <h3>{{Section2SubText3}}</h3>
+                <p>{{Section2SubText3Description}}</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-settings_backup_restore"></span></span>
+              </div>
+              <div>
+                <h3>{{Section2SubText4}}</h3>
+                <p>{{Section2SubText4Description}}</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-sentiment_satisfied"></span></span>
+              </div>
+              <div>
+                <h3>{{Section2SubText5}}</h3>
+                <p>{{Section2SubText5Description}}</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-power"></span></span>
+              </div>
+              <div>
+                <h3>{{Section2SubText6}}</h3>
+                <p>{{Section2SubText6Description}}</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+ 
+    <div class="site-section bg-light" id="about-section"><!--Section3 is about-section -->
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="section-title mb-3">{{Section3Text1}}</h2>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img src="images/undraw_bookmarks_r6up.svg" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-5 ml-auto pl-lg-5">
+            <h2 class="text-black mb-4 h3 font-weight-bold">{{Section3Text2}}</h2>
+            <p class="mb-4">{{Section3Text3}}</p>
+            <ul class="ul-check mb-5 list-unstyled success">
+              <li>{{Section3Obj1}}</li>
+              <li>{{Section3Obj2}}</li>
+              <li>{{Section3Obj3}}</li>
+            </ul>
+            <p><a href="#" class="btn btn-primary">{{Section3Button1Text}}</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section" id="our-team-section"><!--Section4 is our-team-section -->
+      <div class="container">
+        <div class="row mb-5 justify-content-center text-center"  data-aos="fade-up">
+          <div class="col-7 text-center  mb-5">
+            <h2 class="section-title">{{Section4Text1}}</h2>
+            <p class="lead">{{Section4Text2}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img src="images/person_1.jpg" alt="Image" id="Image1" class="img-fluid;">
+                </figure>
+                <div class="social">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                  <a href="#"><span class="icon-twitter"></span></a>
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </div>
+              </div>
+              <h2 class="text-black h1">{{Section4SubText1}}</h2>
+              <span class="sub-title d-block mb-3">{{Section4SubText1Heading}}</span>
+              <p>{{Section4SubText1Description}}</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img src="images/person_2.jpg" alt="Image" id="Image2" class="img-fluid;">
+                </figure>
+                <div class="social">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                  <a href="#"><span class="icon-twitter"></span></a>
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </div>
+              </div>
+              <h2 class="text-black h1">{{Section4SubText2}}</h2>
+              <span class="sub-title d-block mb-3">{{Section4SubText2Heading}}</span>
+              <p>{{Section4SubText2Description}}</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img src="images/person_3.jpg" alt="Image" id="Image3" class="img-fluid;">
+                </figure>
+                <div class="social">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                  <a href="#"><span class="icon-twitter"></span></a>
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </div>
+              </div>
+              <h2 class="text-black h1">{{Section4SubText3}}</h2>
+              <span class="sub-title d-block mb-3">{{Section4SubText3Heading}}</span>
+              <p>{{Section4SubText3Description}}</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img src="images/person_4.jpg" alt="Image" id="Image4" class="img-fluid;">
+                </figure>
+                <div class="social">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                  <a href="#"><span class="icon-twitter"></span></a>
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </div>
+              </div>
+              <h2 class="text-black h1">{{Section4SubText4}}</h2>
+              <span class="sub-title d-block mb-3">{{Section4SubText4Heading}}</span>
+              <p>{{Section4SubText4Description}}</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img src="images/person_5.jpg" alt="Image" id="Image5" class="img-fluid;">
+                </figure>
+                <div class="social">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                  <a href="#"><span class="icon-twitter"></span></a>
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </div>
+              </div>
+              <h2 class="text-black h1">{{Section4SubText5}}</h2>
+              <span class="sub-title d-block mb-3">{{Section4SubText5Heading}}</span>
+              <p>{{Section4SubText5Description}}</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img src="images/person_6.jpg" alt="Image" id="Image6" class="img-fluid;">
+                </figure>
+                <div class="social">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                  <a href="#"><span class="icon-twitter"></span></a>
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </div>
+              </div>
+              <h2 class="text-black h1">{{Section4SubText6}}</h2>
+              <span class="sub-title d-block mb-3">{{Section4SubText6Heading}}</span>
+              <p>{{Section4SubText6Description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site-section" id="blog-section"><!--Section5 is blog-section -->
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="section-title mb-3">{{Section5Text1}}</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+            <div class="h-entry">
+              <img src="images/img_1.jpg" alt="Image" id="Image7" class="img-fluid">
+              <h2><a href="#">{{Section5SubSection1Heading}}</a></h2>
+              <div class="meta mb-4">{{Section5SubSection1Author}} <span class="mx-2">&bullet;</span> {{Section5SubSection1Date}}<span class="mx-2">&bullet;</span></div>
+              <p>{{Section5SubSection1Body}}</p>
+              <p><a ng-href="{{Section5SubSection1Link}}">{{Section5SubSection1LinkText}}</a></p>
+            </div> 
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+            <div class="h-entry">
+              <img src="images/img_2.jpg" alt="Image" id="Image8" class="img-fluid">
+              <h2><a href="#">{{Section5SubSection2Heading}}</a></h2>
+              <div class="meta mb-4">{{Section5SubSection2Author}}<span class="mx-2">&bullet;</span>{{Section5SubSection2Date}}<span class="mx-2">&bullet;</span></div>
+              <p>{{Section5SubSection2Body}}</p>
+              <p><a ng-href="{{Section5SubSection2Link}}">{{Section5SubSection2LinkText}}</a></p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+            <div class="h-entry">
+              <img src="images/img_3.jpg" alt="Image" id="Image9" class="img-fluid">
+              <h2><a href="#">{{Section5SubSection3Heading}}</a></h2>
+              <div class="meta mb-4">{{Section5SubSection3Author}}<span class="mx-2">&bullet;</span>{{Section5SubSection3Date}}<span class="mx-2">&bullet;</span></div>
+              <p>{{Section5SubSection3Body}}</p>
+              <p><a ng-href="{{Section5SubSection3Link}}">{{Section5SubSection3LinkText}}</a></p>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer py-5 text-center" id="footer">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12">
+            <p class="mb-0">
+              <a href="{{FacebookLink}}" class="p-3"><span class="icon-facebook"></span></a>
+              <a href="{{TwitterLink}}" class="p-3"><span class="icon-twitter"></span></a>
+              <a href="{{InstagramLink}}" class="p-3"><span class="icon-instagram"></span></a>
+              <a href="{{LinkedInLink}}" class="p-3"><span class="icon-linkedin"></span></a>
+              <a href="{{PinterestLink}}" class="p-3"><span class="icon-pinterest"></span></a>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p class="mb-0">
+              Thank You For Visiting Us !
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Panel">
+      <button type="button" onclick="on()" class="bottomleft">Show</button><button type="button" onclick="off()" class="bottomright">Hide</button>
+    <div id="overlay">
+      <div class="tab">
+        <a href="#nav" style="text-decoration:none"><button class="tablinks"  onmouseover="" onclick="openSection(event, 'NavigationBar')" style="background-color:#4b0082;color: #ffffff; " id="defaultOpen" >Navigation Bar</button></a>
+        <a href="#first-section" style="text-decoration:none" ><button class="tablinks" id ="button1" onclick="openSection(event, 'Section1')">Section1</button></a>
+        <a href="#features-section" style="text-decoration:none" ><button class="tablinks" id ="button2" onclick="openSection(event, 'Section2')">Section2</button></a>
+        <a href="#about-section" style="text-decoration:none" ><button class="tablinks" id ="button3" onclick="openSection(event, 'Section3')">Section3</button></a>
+        <a href="#our-team-section" style="text-decoration:none" ><button class="tablinks" id ="button4" onclick="openSection(event, 'Section4')">Section4</button></a>
+        <a href="#blog-section" style="text-decoration:none" ><button class="tablinks" id ="button5" onclick="openSection(event, 'Section5')" >Section5</button></a>
+        <a href="#footer" style="text-decoration:none" ><button class="tablinks" id ="button6" onclick="openSection(event, 'Footer')">Footer</button></a>
+      </div>
+      
+      <div id="NavigationBar" class="tabcontent" style="background-color:#4b0082" >
+            <table>
+            <tr>
+              <td><label for="">Name</label></td>
+              <td><input type="text" ng-model="Name" ng-value="imagine" placeholder="imagine" /></td>
+            </tr>
+            <tr>
+              <td><label for="">Menu 1</label></td>
+              <td><input type="text" ng-model="Menu1" ng-value="Home" placeholder="Home" /></td>
+            </tr>
+            <tr>
+              <td>
+                <label for="">Menu 2</label>
+              </td>
+              <td>
+                <input type="text" ng-model="Menu2" ng-value="Features" placeholder="Features" />
+              </td>
+            </tr>
+            
+            <tr>
+              <td>
+                <label for="">Menu 3</label>
+              </td>
+              <td>
+                <input type="text" ng-model="Menu3" ng-value="About Us" placeholder="About Us"/>
+              </td>
+            </tr>
+            
+            
+            <tr>
+              <td>
+                <label for="">Sub Menu 1</label>
+              </td>
+              <td>
+                <input type="text" ng-model="SubMenu1" ng-value="Sub Menu 1" placeholder="Sub Menu 1"/>
+              </td>
+            </tr>
+            
+            <tr>
+              <td>
+                <label for="">Sub Menu 2</label>
+              </td>
+              <td>
+                <input type="text" ng-model="SubMenu2" ng-value="Sub Menu 2" placeholder="Sub Menu 2"/>
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <label for="">Menu 4</label>
+              </td>
+              <td>
+                <input type="text" ng-model="Menu4" ng-value="Testimonials" placeholder="Testimonials" />
+              </td>
+            </tr>
+            
+            <tr>
+              <td>
+                <label for="">Menu 5</label>
+              </td>
+              <td>
+                <input type="text" ng-model="Menu5" ng-value="Blog" placeholder="Blog" />
+              </td>
+            </tr>
+            
+            <tr>
+              <td>
+                <label for="">Menu 6</label>
+              </td>
+              <td>
+                <input type="text" ng-model="Menu6" ng-value="Contact" placeholder="Contact" />
+              </td>
+            </tr>
+          </table>
+      </div>
+
+      <div id="Section1" class="tabcontent" style="background-color: #d23be7;" >
+            <table>
+              <tr>
+                <td>
+                  <label for="">Text 1</label>
+                </td>
+                <td>
+                  <input type="text" ng-model="Section1Text1" ng-value="Make Your Business More Profitable" placeholder="Text Line 1" /><br>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>
+                  <label for="">Text 2</label>
+                </td>
+                <td>
+                  <input type="text" ng-model="Section1Text2" ng-value="Some Text Here" placeholder="Text Line 2" />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <label for="">Text 3</label>
+                </td>
+                <td>
+                  <input type="text" ng-model="Section1Button1Text" ng-value="Button Value Here" placeholder="Button Value Here"/><br>
+                </td>
+              </tr>
+            </table>
+      </div>
+      
+      <div id="Section2" class="tabcontent"style="background-color: #0000ff" >
+        
+            
+        <table>
+          <tr>
+            <td>
+                <label for="">Section 2 Text 1</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2Text1" ng-value="Departments" placeholder="Departments" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Section 2 Text 2</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2Text2" ng-value="Some descriptive information" placeholder="Some descriptive information" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">SubText 1</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2SubText1" ng-value="Title 1" placeholder="Title 1" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Description 1</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2SubText1Description" ng-value="" placeholder="Description" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Link 1</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2Link1Text" ng-value="Title 2" placeholder="Link Text Here" />
+            </td>
+            <td>
+                <input type="text" ng-model="Section2Link1" ng-value="Title 1" placeholder="Link Here" />
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label for="">SubText 2</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2SubText2" ng-value="Title 2" placeholder="Title 2" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Description 2</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2SubText2Description" ng-value="" placeholder="Description" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Link 2</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2Link2Text" ng-value="Title 4" placeholder="Link Text Here" />
+            </td>
+            <td>
+                <input type="text" ng-model="Section2Link2" ng-value="Title 3" placeholder="Link Here" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">SubText 3</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2SubText3" ng-value="Title 3" placeholder="Title 3" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Description 3</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2SubText3Description" ng-value="" placeholder="Description" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Link 3</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2Link3Text" ng-value="Title 5" placeholder="Link Text Here" />
+            </td>
+            <td>
+                <input type="text" ng-model="Section2Link3" ng-value="Title 6" placeholder="Link Here" />  
+            </td>
+        </tr>            
+        <tr>
+            <td>
+                <label for="">SubText 4</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2SubText4" ng-value="Title 4" placeholder="Title 4" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Description 4</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2SubText4Description" ng-value="" placeholder="Description" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Link 4</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2Link4Text" ng-value="Title 1" placeholder="Link Text Here" />
+            </td>
+            <td>
+                <input type="text" ng-model="Section2Link4" ng-value="Title 2" placeholder="Link Here" />
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label for="">Subtext 5</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2SubText5" ng-value="Title 5" placeholder="Title 5" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Description 5</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2SubText5Description" ng-value="" placeholder="Description" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Link 5</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2Link5Text" ng-value="Title 3" placeholder="Link Text Here" />
+            </td>
+            <td>
+                <input type="text" ng-model="Section2Link5" ng-value="Title 4" placeholder="Link Here" />
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label for="">SubText 6</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2SubText6" ng-value="Title 6" placeholder="Title 6" />
+            </td>
+        </tr>  
+        
+        <tr>
+            <td>
+                <label for="">Description 6</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2SubText6Description" ng-value="" placeholder="Description" />
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label for="">Link 6</label>
+            </td>
+            <td>
+                <input type="text" ng-model="Section2Link6Text" ng-value="Title 5" placeholder="Link Text Here" />
+            </td>
+            <td>
+                <input type="text" ng-model="Section2Link6" ng-value="Title 6" placeholder="Link Here" />  
+            </td>
+        </tr>       
+        </table>
+      </div>
+      
+      <div id="Section3" class="tabcontent" style="background-color: #359435;">
+        <table>
+          <tr>
+              <td>
+                  <label for="">Text 1</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section3Text1" ng-value="" placeholder="About Us" />
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <label for="">Text 2</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section3Text2" ng-value="" placeholder="Mission / Other Text" />
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <label for="">Text 3</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section3Text3" ng-value="Some descriptive information" placeholder="Some descriptive information" /><br>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <label for="">Objective 1</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section3Obj1" ng-value="" placeholder="Objective 1" />
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <label for="">Objective 2</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section3Obj2" ng-value="" placeholder="Objective 2" />
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <label for="">Objective 3</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section3Obj3" ng-value="" placeholder="Objective 3" />
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for="">Objective 4</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section3Button1Text" ng-value="" placeholder="Button Text Here" />
+              </td>
+          </tr>
+      </table>
+      </div>
+      
+      <div id="Section4" class="tabcontent" style="background-color: #e6e63e;overflow:scroll;" >
+        <table>
+          <tr>
+              <td>
+                <label for="">Section 1</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText1" placeholder="Person's Name">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <label for="">Heading 1</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText1Heading" placeholder="Designation Title">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <label for="">Description 1</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText1Description" placeholder="Description and some text">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <label for="">Profile Image</label>
+              </td>
+              <td>
+                  <input type='file' id='getval' name="background-image" onchange="readURL(event,'#Image1')" accept="image/*" />
+              </td>
+          </tr>
+      </table>
+      <hr>
+      <table>
+          <tr>
+              <td>
+                <label for="">Section 2</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText2" placeholder="Person's Name">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <label for="">Heading 2</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText2Heading" placeholder="Designation Title">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <label for="">Description 2</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText2Description" placeholder="Description and some text">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                <label for="">Profile Image</label>
+              </td>
+              <td>
+                  <input type='file' id='getval' name="background-image" onchange="readURL(event,'#Image2')" accept="image/*" />
+              </td>
+          </tr>
+      </table>
+      <hr>
+      <table>
+          <tr>
+              <td>
+                <label for="">Section 3</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText3" placeholder="Person's Name">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <label for="">Heading 3</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText3Heading" placeholder="Designation Title">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <label for="">Description 3</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText3Description" placeholder="Description and some text">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                <label for="">Profile Image</label>
+              </td>
+              <td>
+                  <input type='file' id='getval' name="background-image" onchange="readURL(event,'#Image3')" accept="image/*" />
+              </td>
+          </tr>
+      </table>
+      <hr>
+      <table>
+          <tr>
+              <td>
+                <label for="">Section 4</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText4" placeholder="Person's Name">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  Heading 4
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText4Heading" placeholder="Designation Title">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <label for="">Description 4</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText4Description" placeholder="Description and some text">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                <label for="">Profile Image</label>
+              </td>
+              <td>
+                  <input type='file' id='getval' name="background-image" onchange="readURL(event,'#Image4')" accept="image/*" />
+              </td>
+          </tr>
+      </table>
+      <hr>
+      <table>
+          <tr>
+              <td>
+                <label for="">Section 5</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText5" placeholder="Person's Name">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <label for="">Heading 5</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText5Heading" placeholder="Designation Title">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <label for="">Description 5</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText5Description" placeholder="Description and some text">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                <label for="">Profile Image</label>
+              </td>
+              <td>
+                  <input type='file' id='getval' name="background-image" onchange="readURL(event,'#Image5')" accept="image/*" />
+              </td>
+          </tr>
+      </table>
+      <hr>
+      <table>
+          <tr>
+              <td>
+                <label for="">Section 6</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText6" placeholder="Person's Name">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <label for="">Heading 6</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText6Heading" placeholder="Designation Title">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <label for="">Description 6</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section4SubText6Description" placeholder="Description and some text">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for="">Profile Image</label>
+              </td>
+              <td>
+                  <input type='file' id='getval' name="background-image" onchange="readURL(event,'#Image6')" accept="image/*" />
+              </td>
+          </tr>
+      </table>
+      <hr>
+      </div>
+          
+      <div id="Section5" class="tabcontent" style="background-color: #ff7f00;">
+        <table>
+          <tr>
+              <td>
+                  <label for="">Text 1</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5Text1" placeholder="Section Heading">
+              </td>
+          </tr>
+      </table>
+      <hr><hr>
+      <table>
+          <tr>
+              <td>
+                  <label for="">Blog Post 1</label>
+              </td>
+              <td>
+                  <input type='file' id='getval' name="background-image" onchange="readURL(event,'#Image7')" accept="image/*" />
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <label for="">Heading</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection1Heading" placeholder="Sub Section 1 Heading">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for="">Author</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection1Author" placeholder="Sub Section 1 Author">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for="">Date</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection1Date" placeholder="Sub Section 1 Date">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for="">Content</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection1Body" placeholder="Sub Section 1 Body">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for="">Link</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection1Link" placeholder="Sub Section 1 Blog Link">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for="">Link Text</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection1LinkText" placeholder="Sub Section 1 Link Text">
+              </td>
+          </tr>
+      </table>
+      <hr>
+      <table>
+          <tr>
+              <td>
+                  <label for="">Blog Post 2</label>
+              </td>
+              <td>
+                  <input type='file' id='getval' name="background-image" onchange="readURL(event,'#Image8')" accept="image/*" />
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <label for="">Heading</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection2Heading" placeholder="Sub Section 2 Heading">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for="">Author</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection2Author" placeholder="Sub Section 2 Author">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for="">Date</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection2Date" placeholder="Sub Section 2 Date">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for="">Content</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection2Body" placeholder="Sub Section 2 Body">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for="">Link</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection2Link" placeholder="Sub Section 2 Blog Link">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for="">Link Text</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection2LinkText" placeholder="Sub Section 2 Link Text">
+              </td>
+          </tr>
+      </table>
+      <hr>
+      <table>
+          <tr>
+              <td>
+                  <label for="">Blog Post 3</label>
+              </td>
+              <td>
+                  <input type='file' id='getval' name="background-image" onchange="readURL(event,'#Image9')" accept="image/*" />
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <label for="">Heading</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection3Heading" placeholder="Sub Section 3 Heading">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for="">Author</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection3Author" placeholder="Sub Section 3 Author">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for="">Date</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection3Date" placeholder="Sub Section 3 Date">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for="">Content</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection3Body" placeholder="Sub Section 3 Body">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for="">Link</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection3Link" placeholder="Sub Section 3 Blog Link">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for="">Link Text</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="Section5SubSection3LinkText" placeholder="Sub Section 3 Link Text">
+              </td>
+          </tr>
+      </table>
+      <hr>
+      
+      </div>
+      
+      <div id="Footer" class="tabcontent" style="background-color: #99004c;">
+        <table>
+          <tr>
+              <td>
+                  <label for=""><span class="icon-facebook"></span>&nbsp;&nbsp;Facebook</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="FacebookLink" placeholder="Facebook Link Here">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for=""><span class="icon-twitter"></span>&nbsp;&nbsp;Twitter</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="TwitterLink" placeholder="Twitter Link Here">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for=""><span class="icon-instagram"></span>&nbsp;&nbsp;Instagram</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="InstagramLink" placeholder="Instagram Link Here">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for=""><span class="icon-linkedin"></span>&nbsp;&nbsp;LinkedIn</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="LinkedInLink" placeholder="LinkedIn Link Here ">
+              </td>
+          </tr>
+          
+          <tr>
+              <td>
+                  <label for=""><span class="icon-pinterest"></span>&nbsp;&nbsp;Pinterest</label>
+              </td>
+              <td>
+                  <input type="text" ng-model="PinterestLink" placeholder="Pinterest Link Here">
+              </td>
+          </tr>
+      </table>
+    </div>
+      </div>
+    </div>
+      </div>
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
+
+
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div> <!-- .site-wrap -->
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+      var app = angular.module('Business',[]);
+
+app.controller('BusinessCtrl',function($scope) 
+{
+        $scope.Name="imagine";
+        $scope.Menu1="Home";
+        $scope.Menu2="Features";
+        $scope.Menu3="About Us";
+        $scope.SubMenu1="Sub Menu 1";
+        $scope.SubMenu2="Sub Menu 2";
+        $scope.Menu4 = "Testimonials";
+        $scope.Menu5="Blog";
+        
+        $scope.Section1Text1="Make Your Business More Profitable";
+        $scope.Section1Text2="Some Text Here";
+        $scope.Section1Button1Text="Get Started";
+        
+        
+        $scope.Section2Text1="Departments Section";
+        $scope.Section2Text2="Some text here";
+        $scope.Section2SubText1="Section 1";
+        $scope.Section2SubText2="Section 2";
+        $scope.Section2SubText3="Section 3";
+        $scope.Section2SubText4="Section 4";
+        $scope.Section2SubText5="Section 5";
+        $scope.Section2SubText6="Section 6";
+        $scope.Section2SubText1Description="Section 1 Description ";
+        $scope.Section2SubText2Description="Section 2 Description ";
+        $scope.Section2SubText3Description="Section 3 Description ";
+        $scope.Section2SubText4Description="Section 4 Description ";
+        $scope.Section2SubText5Description="Section 5 Description ";
+        $scope.Section2SubText6Description="Section 6 Description ";
+        $scope.Section2Link1Text="Learn More";
+        $scope.Section2Link1="#";
+        $scope.Section2Link2Text="Learn More";
+        $scope.Section2Link2="#";
+        $scope.Section2Link3Text="Learn More";
+        $scope.Section2Link3="#";
+        $scope.Section2Link4Text="Learn More";
+        $scope.Section2Link4="#";
+        $scope.Section2Link5Text="Learn More";
+        $scope.Section2Link5="#";
+        $scope.Section2Link6Text="Learn More";
+        $scope.Section2Link6="#";
+        
+        
+        $scope.Section3Text1="About Us";
+        $scope.Section3Text2="Our Mission";
+        $scope.Section3Text3="Some Text Here";
+        $scope.Section3Obj1="Objective 1";
+        $scope.Section3Obj2="Objective 2";
+        $scope.Section3Obj3="Objective 3";
+        $scope.Section3Button1Text="Button Text";
+        
+        $scope.Section4Text1="Our Team";
+        $scope.Section4Text2="Description : Some Text Here";
+        
+        $scope.Section4SubText1="Person's Name";
+        $scope.Section4SubText1Heading="Designation Title";
+        $scope.Section4SubText1Description="Description and some text";
+
+        $scope.Section4SubText2="Person's Name";
+        $scope.Section4SubText2Heading="Designation Title";
+        $scope.Section4SubText2Description="Description and some text";
+
+        $scope.Section4SubText3="Person's Name";
+        $scope.Section4SubText3Heading="Designation Title";
+        $scope.Section4SubText3Description="Description and some text";
+
+        $scope.Section4SubText4="Person's Name";
+        $scope.Section4SubText4Heading="Designation Title";
+        $scope.Section4SubText4Description="Description and some text";
+
+        $scope.Section4SubText5="Person's Name";
+        $scope.Section4SubText5Heading="Designation Title";
+        $scope.Section4SubText5Description="Description and some text";
+
+        $scope.Section4SubText6="Person's Name";
+        $scope.Section4SubText6Heading="Designation Title";
+        $scope.Section4SubText6Description="Description and some text";
+
+        $scope.Section5Text1="Section Heading";
+$scope.Section5SubSection1Heading="Sub Section 1 Heading";
+$scope.Section5SubSection1Author="Author Name";
+$scope.Section5SubSection1Date="Blog Date";
+$scope.Section5SubSection1Body="Blog content goes here...";
+$scope.Section5SubSection1Link="#";
+$scope.Section5SubSection1LinkText="Blog Link";
+
+$scope.Section5SubSection2Heading="Sub Section 2 Heading";
+$scope.Section5SubSection2Author="Author Name";
+$scope.Section5SubSection2Date="Blog Date";
+$scope.Section5SubSection2Body="Blog content goes here...";
+$scope.Section5SubSection2Link="#";
+$scope.Section5SubSection2LinkText="Blog Link";
+
+$scope.Section5SubSection3Heading="Sub Section 3 Heading";
+$scope.Section5SubSection3Author="Author Name";
+$scope.Section5SubSection3Date="Blog Date";
+$scope.Section5SubSection3Body="Blog content goes here...";
+$scope.Section5SubSection3Link="#";
+$scope.Section5SubSection3LinkText="Blog Link";
+
+
+$scope.FacebookLink="#";
+$scope.TwitterLink="#";
+$scope.InstagramLink="#";
+$scope.LinkedInLink="#";
+$scope.PinterestLink="#";
+    });
+
+
+    function readURL(event,value){
+		 var getImagePath = URL.createObjectURL(event.target.files[0]);
+		 $('#clock').css('background-image', 'url(' + getImagePath + ')');
+         $(value).attr("src", getImagePath );
+         $(value).attr("height", "500px" );
+		} 
+
+    function openSection(evt, SectionName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(SectionName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+document.onload(on());
+
+  </script>
+  </body>
+</html>
